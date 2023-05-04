@@ -1,0 +1,94 @@
+:root {
+  --main-bg-color: #b9b9b9;
+  --head-line-color: #515151;
+  --main-color: #f75a21;
+  --first-item: #fd642c;
+  --second-item: #c64f23;
+  --third-item: #ae3f17;
+}
+@font-face {
+  font-family: "text";
+  font-display: swap;
+  src: url(/assets/fonts/OpenSans-Medium.woff);
+}
+@font-face {
+  font-family: "title";
+  font-display: swap;
+  src: url(/assets/fonts/OpenSans-Bold.woff);
+}
+body {
+  background-color: var(--main-bg-color);
+  margin: 0px;
+  font-family: "text";
+}
+.container {
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+.btn {
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 6px;
+  width: max-content;
+  color: white;
+  padding: 6px;
+  font-size: 20px;
+  font-family: "title";
+}
+
+/* #region кнопка На главную */
+#back {
+  position: relative;
+  top: 50%;
+  left: -40%;
+  rotate: -90deg;
+}
+#back > a {
+  color: white;
+  text-decoration: none;
+}
+#back:hover, .tab-header_btn:hover {
+    cursor: pointer;
+  background-color: var(--third-item);
+}
+/* #endregion */
+/* #region Заголовок вкладок */
+.head,
+.text {
+  background-color: white;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 20px;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 90% 5% 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+#theme {
+  margin: 0px;
+  color: var(--head-line-color);
+}
+#title {
+  margin: 0px;
+  font-size: 18px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.tabs {
+  padding: 10px;
+}
+
+/* #endregion */
+/* #region основной блок вкладок */
+.moves{
+    display: flex;
+    justify-content: space-between;
+}
+.tab-header_btn {
+    font-family: "text";
+  }
+  /* #endregion */

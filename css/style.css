@@ -1,0 +1,282 @@
+:root {
+  --main-bg-color: #b9b9b9;
+  --head-line-color: #515151;
+  --main-color: #f75a21;
+  --first-item: #fd642c;
+  --second-item: #c64f23;
+  --third-item: #ae3f17;
+}
+@font-face {
+  font-family: "text";
+  font-display: swap;
+  src: url(/assets/fonts/OpenSans-Medium.woff);
+}
+@font-face {
+  font-family: "title";
+  font-display: swap;
+  src: url(/assets/fonts/OpenSans-Bold.woff);
+}
+body {
+  background-color: var(--main-bg-color);
+  margin: 0px;
+  font-family: "text";
+}
+
+/*  #region Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+}
+#info {
+  display: flex;
+  margin-left: 5%;
+}
+.head {
+  position: relative;
+  left: -2%;
+  font-size: 30px;
+  font-family: "title";
+}
+.head_item {
+  border-left: 5px solid var(--head-line-color);
+  padding: 8px;
+  width: 50%;
+  max-width: 180px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.head,
+.head_item {
+  margin-bottom: 5px;
+}
+.head_item:hover {
+  cursor: pointer;
+  color: white;
+}
+/* #endregion */
+/*  #region Title */
+.title {
+  background-color: white;
+  border: 4px solid var(--main-color);
+  display: flex;
+  gap: 5%;
+  padding-left: 5%;
+}
+.title > h3 {
+  font-size: 30px;
+  margin: 15px;
+}
+#theme {
+  color: var(--head-line-color);
+}
+/* #endregion */
+/*  #region Main */
+.main {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 2%;
+  gap: 20px;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+#first, #line_first::before, #line_first::after {
+  background-color: var(--first-item);
+}
+#second, #line_second::before,  #line_second::after {
+  background-color: var(--second-item);
+}
+#third, #line_third::before,  #line_third::after {
+  background-color: var(--third-item);
+}
+.line_item {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: max-content;
+  border: 3px solid var(--main-color);
+  margin-bottom: 20px;
+  height: 130px;
+  position: relative;
+}
+.line_item::before{
+    content: " ";
+    width: 10px;
+    height: 136px;
+    margin-left: -20px;
+    margin-top: -3px;
+    /* располагаем линию сверху от текста */
+    /* left: 0px; */
+    /* включаем абсолютное позиционирование относительно блока с relative */
+    position: absolute;
+}
+.line_item::after{
+    content: " ";
+    width: 40px;
+    height: 136px;
+    right: -50px;
+    margin-top: -3px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    /* располагаем линию сверху от текста */
+    /* left: 0px; */
+    /* включаем абсолютное позиционирование относительно блока с relative */
+    position: absolute;
+}
+
+.left {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 110px;
+  box-shadow: #51515187 5px -5px 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.title_item {
+  font-size: 18px;
+  color: white;
+}
+.img_item {
+  width: 80px;
+  height: 80px;
+}
+.img {
+  width: max-content;
+  background-color: white;
+  padding: 5%;
+  border-radius: 100%;
+  box-shadow: inset #51515187 5px -5px 10px;
+}
+.righ {
+    margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  height: 130px;
+}
+.text,
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.icons {
+  position: relative;
+  right: 0px;
+  align-items: center;
+}
+.text > h4 {
+  font-size: 18px;
+}
+.pod {
+  color: var(--head-line-color);
+}
+.icon:hover{
+    scale: 1.1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#doc {
+  width: 50px;
+  height: 50px;
+}
+#play {
+  width: 40px;
+  height: 40px;
+}
+/* main_dop */
+.main_dop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--head-line-color);
+}
+.main_dop > h3,
+.main_dop > h4 {
+  margin: 10px;
+}
+.logo {
+  width: 250px;
+}
+.logo_line {
+  font-size: 25px;
+  border-bottom: 3px solid var(--head-line-color);
+  width: max-content;
+}
+/* #endregion */
+/*  #region ModaWindows */
+.modal-wrapper,
+#words,
+#recomends {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.34);
+}
+
+
+.modal_main {
+  position: relative;
+  top: 50px;
+  max-width: 1092px;
+  height: 490px;
+  padding: 30px;
+  background-color: #fefefe;
+  display: block;
+  margin: auto;
+  overflow: scroll;
+  border: 5px solid var(--main-color);
+  border-radius: 15px;
+  font-family: "text";
+}
+
+/* Редактор прокрутки модального окна */
+.modal_main::-webkit-scrollbar {
+  width: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.modal_main::-webkit-scrollbar-thumb {
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: var(--head-line-color);
+}
+.modal_main::-webkit-scrollbar-track {
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #d5d5d5;
+}
+.modal__close {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 50px;
+  color: var(--main-color);
+  height: 30px;
+  width: 30px;
+  /* border-radius: 50%; */
+}
+
+.modal__close:hover {
+  color: var(--third-item);
+}
+.modal__title {
+  font-size: 25px;
+  margin-top: 0px;
+
+  font-family: "title";
+}
+/* #endregion */

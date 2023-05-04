@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/trenirovka.css" />
+    <script src="/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="back">
+        <button class="btn" id="back">
+          <a href="/assets/views/index.html">на главную</a>
+        </button>
+      </div>
+      <div class="tabs">
+        <div class="tab-body">
+          <div class="head">
+            <h3 id="theme">ТЕМА</h3>
+          </div>
+          <div class="text">
+            <h3 id="title">
+              Задание Задание Задание Задание Задание Задание Задание Задание
+              Задание Задание
+            </h3>
+            <img src="/assets/img/doc_fon.svg" alt="" class="icon" id="doc" />
+            <div class="btn number_task">1/10</div>
+          </div>
+          <div class="tab-body__item active" id="tab-1">
+            <div class="tasks">
+              <div class="task">
+                <input type="radio" name="radio" id="r1" /><label for="r1"
+                  >Задание Задание Задание</label
+                >
+              </div>
+              <div class="task">
+                <input type="radio" name="radio" id="r2" /><label for="r2"
+                  >Задание Задание Задание</label
+                >
+              </div>
+              <div class="task">
+                <input type="radio" name="radio" id="r3" /><label for="r3"
+                  >Задание Задание Задание</label
+                >
+              </div>
+              <div class="task">
+                <input type="radio" name="radio" id="r4" /><label for="r4"
+                  >Задание Задание Задание</label
+                >
+              </div>
+            </div>
+            <div class="moves">
+              <button class="btn tab-header_btn" data-target="tab-1">
+                НАЗАД
+              </button>
+              <button class="btn tab-header_btn" data-target="tab-3">
+                ДАЛЕЕ
+              </button>
+            </div>
+          </div>
+          <div class="tab-body__item" id="tab-2">
+            <h3>2</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              incidunt sed repellat recusandae quod fugiat. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Voluptas incidunt sed
+              repellat recusandae quod fugiat. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Voluptas incidunt sed repellat
+              recusandae quod fugiat.
+            </p>
+          </div>
+          <div class="tab-body__item" id="tab-3">
+            <h3>3</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              incidunt sed repellat recusandae quod fugiat. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Voluptas incidunt sed
+              repellat recusandae quod fugiat.
+            </p>
+          </div>
+        </div>
+        <div class="tab-navigation">
+          <div class="tab-header__item active" data-target="tab-1">
+            <strong>1/10</strong>
+          </div>
+          <div class="tab-header__item" data-target="tab-2">
+            <strong>2/10</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
