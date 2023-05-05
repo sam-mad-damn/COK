@@ -9,12 +9,12 @@
 @font-face {
   font-family: "text";
   font-display: swap;
-  src: url(/assets/fonts/OpenSans-Medium.woff);
+  src: url(OpenSans-Medium.woff);
 }
 @font-face {
   font-family: "title";
   font-display: swap;
-  src: url(/assets/fonts/OpenSans-Bold.woff);
+  src: url(OpenSans-Bold.woff);
 }
 body {
   background-color: var(--main-bg-color);
@@ -47,9 +47,14 @@ body {
   color: white;
   text-decoration: none;
 }
-#back:hover, .tab-header_btn:hover {
-    cursor: pointer;
+#back:hover,
+.tab-header_btn:hover {
+  cursor: pointer;
   background-color: var(--third-item);
+}
+.btn:disabled{
+  cursor: auto;
+  background-color: var(--main-color);
 }
 /* #endregion */
 /* #region Заголовок вкладок */
@@ -76,19 +81,206 @@ body {
 .icon {
   width: 40px;
   height: 40px;
+  transition: 0.3s;
+}
+.icon:hover {
+  cursor: pointer;
+  scale: 1.1;
 }
 
 .tabs {
   padding: 10px;
+  height: 600px;
 }
 
 /* #endregion */
 /* #region основной блок вкладок */
-.moves{
-    display: flex;
-    justify-content: space-between;
+.tasks {
+  display: grid;
+  gap: 2%;
+  margin: 2%;
+  justify-items: center;
+  height: 90%;
+}
+.task {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 20px;
+  display: flex;
+  width: 50%;
+}
+/* #region Кастом радиокнопок */
+.custom-radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.5s;
+}
+.custom-radio + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  transition: 0.5s;
+}
+label:hover {
+  cursor: pointer;
+}
+.custom-radio:hover {
+  cursor: pointer;
+}
+.custom-radio + label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #191616;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.custom-radio:not(:disabled):not(:checked) + label:hover::before {
+  border-color: var(--main-color);
+}
+.custom-radio:checked + label::before {
+  background-image: url(radioButton.png);
+  background-size: cover;
+  border-color: #191616;
+}
+/* #endregion */
+.moves {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 0px;
 }
 .tab-header_btn {
-    font-family: "text";
-  }
-  /* #endregion */
+  font-family: "text";
+}
+.tab-body__item {
+  display: none;
+  height: 450px;
+}
+.active {
+  display: block;
+}
+.video_lection{
+  display: grid;
+  justify-items: center;
+  height: 453px;
+}
+#video{
+  width: 100%;
+  height: 450px;
+  border-radius: 5px;
+  margin: 2px;
+}
+.virt{
+  background-color: white;
+  display: grid;
+  grid-template-columns: 30% 65%;
+  gap: 5%;
+  justify-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  height: 85%;
+  padding: 30px;
+  overflow: scroll;
+}
+/* #region Редактор прокрутки модального окна */
+.virt::-webkit-scrollbar {
+  width: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.virt::-webkit-scrollbar-thumb {
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: var(--head-line-color);
+}
+.virt::-webkit-scrollbar-track {
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #d5d5d5;
+}
+/* #endregion */
+.main_pic{
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+}
+.virt_text{
+  margin: 0px;
+}
+/* #endregion */
+/*  #region ModaWindows */
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.34);
+}
+.modal_main {
+  position: relative;
+  top: 50px;
+  max-width: 1092px;
+  height: 490px;
+  padding: 30px;
+  background-color: #fefefe;
+  display: block;
+  margin: auto;
+  overflow: scroll;
+  border: 5px solid var(--main-color);
+  border-radius: 15px;
+  font-family: "text";
+}
+
+/* Редактор прокрутки модального окна */
+.modal_main::-webkit-scrollbar {
+  width: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.modal_main::-webkit-scrollbar-thumb {
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: var(--head-line-color);
+}
+.modal_main::-webkit-scrollbar-track {
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #d5d5d5;
+}
+.modal__close {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 50px;
+  color: var(--main-color);
+  height: 30px;
+  width: 30px;
+  /* border-radius: 50%; */
+}
+
+.modal__close:hover {
+  color: var(--third-item);
+}
+.modal__title {
+  font-size: 25px;
+  margin-top: 0px;
+
+  font-family: "title";
+}
+/* #endregion */

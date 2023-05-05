@@ -9,12 +9,12 @@
 @font-face {
   font-family: "text";
   font-display: swap;
-  src: url(/assets/fonts/OpenSans-Medium.woff);
+  src: url(OpenSans-Medium.woff);
 }
 @font-face {
   font-family: "title";
   font-display: swap;
-  src: url(/assets/fonts/OpenSans-Bold.woff);
+  src: url(OpenSans-Bold.woff);
 }
 body {
   background-color: var(--main-bg-color);
@@ -137,6 +137,14 @@ body {
   padding: 10px;
   display: flex;
   justify-content: space-between;
+}
+.ssilka{
+    text-decoration: none;
+}
+.ssilka:hover{
+    scale:1.05;
+    transition: ease-out 0.3s;
+    
 }
 .title_item {
   font-size: 18px;
