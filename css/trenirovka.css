@@ -23,7 +23,7 @@ body {
 }
 .container {
   display: grid;
-  grid-template-columns: 10% 90%;
+  padding-left: 30px;
 }
 .btn {
   background-color: var(--main-color);
@@ -32,16 +32,41 @@ body {
   width: max-content;
   color: white;
   padding: 6px;
-  font-size: 20px;
+  font-size: 3vh;
   font-family: "title";
 }
 
 /* #region кнопка На главную */
+.back {
+  display: grid;
+  align-items: center;
+}
 #back {
-  position: relative;
-  top: 50%;
-  left: -40%;
-  rotate: -90deg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 6px;
+  font-size: 3vh;
+  font-family: "title";
+  position: absolute;
+  left: 0;
+  top: 30%;
+  cursor: pointer;
+  width: 25px;
+  height: 125px;
+  color: #fff;
+  -webkit-writing-mode: tb-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  text-align: center;
+  z-index: 10;
+  transition: 0.3s ease;
 }
 #back > a {
   color: white;
@@ -52,7 +77,7 @@ body {
   cursor: pointer;
   background-color: var(--third-item);
 }
-.btn:disabled{
+.btn:disabled {
   cursor: auto;
   background-color: var(--main-color);
 }
@@ -63,7 +88,7 @@ body {
   background-color: white;
   padding: 15px;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 3vh;
   margin-top: 5px;
   display: grid;
   grid-template-columns: 90% 5% 5%;
@@ -76,7 +101,7 @@ body {
 }
 #title {
   margin: 0px;
-  font-size: 18px;
+  font-size: 2.5vh;
 }
 .icon {
   width: 40px;
@@ -106,7 +131,7 @@ body {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
-  font-size: 20px;
+  font-size: 3vh;
   display: flex;
   width: 50%;
 }
@@ -168,18 +193,18 @@ label:hover {
 .active {
   display: block;
 }
-.video_lection{
+.video_lection {
   display: grid;
   justify-items: center;
   height: 453px;
 }
-#video{
+#video {
   width: 100%;
   height: 450px;
   border-radius: 5px;
   margin: 2px;
 }
-.virt{
+.virt {
   background-color: white;
   display: grid;
   grid-template-columns: 30% 65%;
@@ -209,12 +234,12 @@ label:hover {
   background-color: #d5d5d5;
 }
 /* #endregion */
-.main_pic{
+.main_pic {
   width: 100%;
   height: 80%;
   border-radius: 5px;
 }
-.virt_text{
+.virt_text {
   margin: 0px;
 }
 /* #endregion */
@@ -267,7 +292,7 @@ label:hover {
   top: 0px;
   right: 15px;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 8vh;
   color: var(--main-color);
   height: 30px;
   width: 30px;
@@ -278,9 +303,11 @@ label:hover {
   color: var(--third-item);
 }
 .modal__title {
-  font-size: 25px;
+  font-size: 4.5vh;
   margin-top: 0px;
-
   font-family: "title";
+}
+.modal_text{
+  font-size: 2.5vh;
 }
 /* #endregion */
