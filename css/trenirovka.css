@@ -50,14 +50,15 @@ body {
   border-radius: 6px;
   color: white;
   padding: 6px;
-  font-size: 3vh;
+  font-size: 20px;
   font-family: "title";
   position: absolute;
   left: 0;
   top: 30%;
   cursor: pointer;
   width: 25px;
-  height: 125px;
+  min-height: 125px;
+  max-height: max-content;
   color: #fff;
   -webkit-writing-mode: tb-rl;
   -ms-writing-mode: tb-rl;
