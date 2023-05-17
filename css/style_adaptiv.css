@@ -21,8 +21,11 @@
     flex-direction: column-reverse;
     padding: 5%;
   }
-  .main_dop > h4 {
-    font-size: 28px;
+  .main_dop{
+    padding: 0px;
+  }
+  .logo_noline {
+    font-size: 25px;
   }
   .logo_line {
     font-size: 35px;
