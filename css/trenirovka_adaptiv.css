@@ -1,0 +1,61 @@
+@media screen and (max-width: 768px) {
+    .container{
+        padding: 2%;
+    }
+    #back{
+        display: none;
+    }
+    /* #region Заголовок вкладок */
+    .tabs{
+        padding: 0px;
+    }
+    .head{
+        font-size: 4.5vh;
+    }
+    .text{
+        grid-template-columns: 70% 15% 15%;
+    }
+    #title{
+        font-size: 3vh;
+    }
+    #doc{
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 12%;
+    }
+    .icon{
+        width: 55px;
+        height: 55px;
+    }
+    .number_task{
+        position: absolute;
+        right: 5%;
+    }
+    /* #endregion */
+    /* #region Основной блок вкладок */
+    .tasks{
+        margin: 0px;
+        padding: 30px 15px 15px 15px;
+        gap: 4%;
+    }
+    .task{
+        width: 100%;
+        padding: 15px;
+    }
+    /* #endregion */
+    /*  */
+    .moves{
+        position: static;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .back{
+       display: block;
+    }
+    .back>a{
+        text-decoration: none;
+        color: inherit;
+        font-family: inherit;
+    }
+}

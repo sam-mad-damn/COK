@@ -1,6 +1,7 @@
 :root {
   --main-bg-color: #b9b9b9;
   --head-line-color: #515151;
+  --main-font-color: #272727;
   --main-color: #f75a21;
   --first-item: #fd642c;
   --second-item: #c64f23;
@@ -20,6 +21,7 @@ body {
   background-color: var(--main-bg-color);
   margin: 0px;
   font-family: "text";
+  color: var(--main-font-color);
 }
 .container {
   display: grid;
@@ -38,8 +40,7 @@ body {
 
 /* #region кнопка На главную */
 .back {
-  display: grid;
-  align-items: center;
+  display: none;
 }
 #back {
   display: flex;
@@ -73,6 +74,7 @@ body {
   color: white;
   text-decoration: none;
 }
+.back:hover,
 #back:hover,
 .tab-header_btn:hover {
   cursor: pointer;
@@ -80,7 +82,8 @@ body {
 }
 .btn:disabled {
   cursor: auto;
-  background-color: var(--main-color);
+  background-color: var(--third-item);
+  color: #191616;
 }
 /* #endregion */
 /* #region Заголовок вкладок */
@@ -181,8 +184,9 @@ label:hover {
 .moves {
   display: flex;
   justify-content: space-between;
-  position: relative;
-  bottom: 0px;
+  position: static;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 .tab-header_btn {
   font-family: "text";
@@ -236,9 +240,11 @@ label:hover {
 }
 /* #endregion */
 .main_pic {
+  object-fit: contain;
   width: 100%;
-  height: 80%;
+  height: 90%;
   border-radius: 5px;
+  border: 1px solid #bbbbbb;
 }
 .virt_text {
   margin: 0px;
@@ -308,7 +314,7 @@ label:hover {
   margin-top: 0px;
   font-family: "title";
 }
-.modal_text{
+.modal_text {
   font-size: 2.5vh;
 }
 /* #endregion */

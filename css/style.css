@@ -1,5 +1,6 @@
 :root {
   --main-bg-color: #b9b9b9;
+  --main-font-color: #272727;
   --head-line-color: #515151;
   --main-color: #f75a21;
   --first-item: #fd642c;
@@ -20,6 +21,7 @@ body {
   background-color: var(--main-bg-color);
   margin: 0px;
   font-family: "text";
+  color: var(--main-font-color);
 }
 
 /*  #region Header */
@@ -106,21 +108,7 @@ body {
   background-color: var(--third-item);
 }
 
-/* .line_item {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  background-color: white;
-  border: 0.4vh solid var(--main-color);
-  position: relative;
-  min-height: 22vh;
-  max-height: max-content;
-  /* 
-  height: max-content;
- 
-  height: 100%;
-  
-} */
-/* ФГОС */
+
 .line_item {
   border: 0.4vh solid var(--main-color);
   width: 100%;
@@ -186,10 +174,11 @@ body {
   color: #fff;
   font-size: 2.5vh;
   font-family: "text";
+  word-wrap: break-word;
 }
 .img_item {
-  width: 70%;
-  height: 50%;
+  width: 80%;
+  height: 60%;
   margin: 10%;
 }
 .img {
@@ -213,7 +202,7 @@ body {
 }
 
 .righ {
-  height: 100%;
+  height: 90%;
   width: 70%;
   padding: 15px 5px 15px 160px;
   display: -webkit-flex;
@@ -225,10 +214,10 @@ body {
 .icons {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   right: 0px;
-  top: -10%;
+  top: -5%;
   align-items: center;
 }
 .text {
@@ -267,23 +256,28 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  padding-left: 10%;
   color: var(--head-line-color);
 }
-.main_dop > h3,
-.main_dop > h4 {
+.logo_line, .logo_noline{
+  font-family: "title";
   margin: 10px;
+  display: flex;
 }
 .logo {
-  width: 55%;
+  width: 65%;
 }
-.main_dop > h4 {
+.logo_noline {
   font-size: 2.7vh;
 }
 .logo_line {
   font-size: 4vh;
-  border-bottom: 3px solid var(--head-line-color);
+  border-bottom: 4px solid var(--head-line-color);
   width: max-content;
 }
+/* #endregion */
+/* #region Адаптив */
+
 /* #endregion */
 /*  #region ModaWindows */
 .modal-wrapper,
