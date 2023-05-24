@@ -46,27 +46,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+
   background-color: var(--main-color);
   border: none;
   border-radius: 6px;
   color: white;
-  padding: 6px;
-  font-size: 20px;
+  padding: 12px 6px;
+
+  font-size: 120%;
   font-family: "title";
+
   position: absolute;
   left: 0;
-  top: 30%;
+  /* top: 250px; */
+  top: 40%;
+  margin-top: -0.625em;
+
   cursor: pointer;
+
   width: 25px;
   min-height: 125px;
   max-height: max-content;
+
   color: #fff;
+
   -webkit-writing-mode: tb-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: tb-rl;
   -webkit-transform: rotate(180deg);
+
   transform: rotate(180deg);
-  text-align: center;
   z-index: 10;
   transition: 0.3s ease;
 }
@@ -80,11 +90,7 @@ body {
   cursor: pointer;
   background-color: var(--third-item);
 }
-.btn:disabled {
-  cursor: auto;
-  background-color: var(--third-item);
-  color: #191616;
-}
+
 /* #endregion */
 /* #region Заголовок вкладок */
 .head,
@@ -118,7 +124,7 @@ body {
 }
 
 .tabs {
-  padding: 10px;
+  padding: 10px 100px 10px 70px;
   height: 600px;
 }
 
@@ -126,10 +132,12 @@ body {
 /* #region основной блок вкладок */
 .tasks {
   display: grid;
-  gap: 2%;
-  margin: 2%;
   justify-items: center;
-  height: 90%;
+  align-items: center;
+  /* height: 10%; */
+  width: 100%;
+  padding: 50px 0px 100px 0px;
+  gap: 5%;
 }
 .task {
   background-color: white;
@@ -137,7 +145,7 @@ body {
   padding: 20px;
   font-size: 3vh;
   display: flex;
-  width: 50%;
+  width: 70%;
 }
 /* #region Кастом радиокнопок */
 .custom-radio {
@@ -193,7 +201,7 @@ label:hover {
 }
 .tab-body__item {
   display: none;
-  height: 450px;
+  /* height: 450px; */
 }
 .active {
   display: block;
@@ -201,22 +209,25 @@ label:hover {
 .video_lection {
   display: grid;
   justify-items: center;
-  height: 453px;
+  align-items: center;
+  /* height: 10%; */
+  width: 100%;
+  padding: 50px 0px 35px 0px;
 }
 #video {
   width: 100%;
-  height: 450px;
+  /* height: 450px; */
   border-radius: 5px;
   margin: 2px;
 }
 .virt {
   background-color: white;
   display: grid;
-  grid-template-columns: 30% 65%;
+  grid-template-columns: 40% 55%;
   gap: 5%;
   justify-items: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 50px;
+  margin-bottom: 35px;
   border-radius: 5px;
   height: 85%;
   padding: 30px;
@@ -240,10 +251,9 @@ label:hover {
 }
 /* #endregion */
 .main_pic {
-  object-fit: contain;
-  width: 100%;
-  height: 90%;
-  border-radius: 5px;
+  object-fit: cover;
+  width: 90%;
+  height: 80%;
   border: 1px solid #bbbbbb;
 }
 .virt_text {
