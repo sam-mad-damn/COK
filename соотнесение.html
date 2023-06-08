@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Создаем массив объектов с вопросами и ответами
+const questions = [
+  {
+    question: "Сколько будет 2 + 2?",
+    options: [
+      { label: "а", answer: "4" },
+      { label: "б", answer: "5" },
+      { label: "в", answer: "6" }
+    ],
+    correctOrder: ["а", "в", "б"]
+  },
+  {
+    question: "Сколько будет 5 * 5?",
+    options: [
+      { label: "а", answer: "20" },
+      { label: "б", answer: "25" },
+      { label: "в", answer: "30" }
+    ],
+    correctOrder: ["б", "а", "в"]
+  },
+  {
+    question: "Сколько будет 10 / 2?",
+    options: [
+      { label: "а", answer: "2" },
+      { label: "б", answer: "3" },
+      { label: "в", answer: "5" }
+    ],
+    correctOrder: ["в", "б", "а"]
+  }
+];
+
+// Создаем переменную для хранения количества правильных ответов
+let correctAnswers = 0;
+
+// Отображаем каждый вопрос по очереди
+for (let i = 0; i < questions.length; i++) {
+  const options = questions[i].options.map(option => `<div class="option" data-answer="${option.answer}">${option.label} - ${option.answer}</div>`).join("");
+  const userAnswer = prompt(`${questions[i].question}nn${options}`);
+
+  // Проверяем ответ пользователя
+  const userOrder = userAnswer.split(",").map(answer => answer.trim());
+  if (JSON.stringify(userOrder) === JSON.stringify(questions[i].correctOrder)) {
+    correctAnswers++;
+  }
+}
+
+// Вычисляем процент правильных ответов и отображаем результат
+const result = (correctAnswers / questions.length) * 100;
+alert(`Вы ответили правильно на ${result}% вопросов`);
+</script>
+</html>

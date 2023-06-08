@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/trenirovka.css" />
+    <script defer src="js/text_compliance.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="" id="back">
+        <a href="index.html">на главную</a>
+      </div>
+      <div class="tabs">
+        <div class="tab-body">
+          <div class="tab-body__item active" id="tab-1">
+            <div class="head">
+              <h3 id="theme">ТЕМА</h3>
+            </div>
+            <div class="text">
+              <h3 id="title">Установите соответствие</h3>
+              <div id="doc">
+                <img src="img/doc_fon.svg" alt="" class="icon" />
+              </div>
+              <div class="btn number_task" id="number_task"></div>
+            </div>
+            <div class="tasks" id="tasks"></div>
+            <div class="moves">
+              <button
+                disabled
+                class="btn tab-header_btn previos"
+                data-target="tab-1"
+              >
+                НАЗАД
+              </button>
+              <div class="back btn">
+                <a href="index.html">на главную</a>
+              </div>
+              <button
+                class="btn tab-header_btn next"
+                id="next"
+                data-target="tab-2"
+              >
+                ДАЛЕЕ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
