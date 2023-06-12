@@ -1,4 +1,35 @@
-// Создаем массив объектов с вопросами, вариантами ответов и правильным ответом
+//функция для работы с модальным окном
+function modalWork(btnName, modalName, closeName) {
+    // функция для закрытия модального окна
+    function closeModalWindow(wrapper) {
+        wrapper.style.display = 'none';
+    }
+    // ищем модальное окно на странице
+    let modal = document.querySelector(modalName);
+
+    // присваеваем всем указанным кнопкам событие - показ модальное окна
+    document.querySelectorAll(btnName).forEach(item => item.addEventListener("click", (e) => {
+        modal.style.display = 'block'
+    }))
+    // присваеваем всем указанным кнопкам событие - скрытие модальное окна
+    document.querySelector(closeName).addEventListener('click', () => {
+        closeModalWindow(modal);
+    })
+    // присваеваем "вуали"(затемнению) модального окна событие - скрытие модального окна
+    modal.addEventListener('click', (e) => {
+        if (e.target == e.currentTarget)
+            closeModalWindow(modal);
+    })
+    // скрытие модального окна при нажатии на клавишу Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.code == 'Escape') closeModalWindow(modal);
+    })
+}
+
+// вызываем функцию для работы с модальным окном
+modalWork("#doc", "#modal_wrapper", "#close")
+
+// Создаем массив объектов с вопросами и правильным ответом
 const questions = [
     {
         question: "Сколько дней в неделе?",
@@ -37,10 +68,6 @@ questions.forEach(que => {
 // перемешиваем его в рандомном порядке
 allAnswers.sort(() => Math.random() - 0.5)
 
-// // Проверяем ответ пользователя
-// if (userAnswer === questions[i].answer) {
-//     correctAnswers++;
-// }
 
 // создаем контейнеры
 document.querySelector(".tasks").insertAdjacentHTML("beforeend", `<div class="allTasks"></div>`)
@@ -50,7 +77,7 @@ document.querySelector(".allTasks").insertAdjacentHTML("beforeend", `<div class=
 // создаем вопросы 
 allQuestions.forEach(que => {
     for (let i = 0; i < questions.length; i++) {
-        // ищем индекс вопроса и записываем его в data-target
+        // ищем индекс вопроса и записываем его в атрибут data-target вопроса
         if (questions[i].question == que) {
             document.querySelector(".questions").insertAdjacentHTML("beforeend", `<div class="question"><label>${que}</label><div class="place" data-target='${i}' ></div></div>`)
         }
@@ -60,7 +87,7 @@ allQuestions.forEach(que => {
 // создаем ответы
 allAnswers.forEach(ans => {
     for (let i = 0; i < questions.length; i++) {
-        // ищем индекс ответа и записываем его в data-target
+        // ищем индекс ответа и записываем его в атрибут data-target ответа
         if (questions[i].answer == ans) {
             document.querySelector(".answers").insertAdjacentHTML("beforeend", `<div class="home" ><div class="answer" draggable='true' data-target='${i}'><label>${ans}</label></div></div>`)
         }
@@ -69,10 +96,11 @@ allAnswers.forEach(ans => {
 
 let dragItems = document.querySelectorAll(".answer");//ответы, которые перетаскиваем
 let mainBoxes = document.querySelectorAll(".place")//области воспросов
-let homes=document.querySelectorAll(".home")//области где изначально находились ответы
+let homes = document.querySelectorAll(".home")//области где изначально находились ответы
 let currentBoxes = [];
 let item;
 
+// присваиваем ответам нужные для перетаскивания события
 dragItems.forEach((dragItem) => {
     dragItem.addEventListener("dragstart", dragstart);
 });
@@ -83,12 +111,13 @@ mainBoxes.forEach(box => {
     box.addEventListener("dragenter", dragenter);
     box.addEventListener("drop", dragdrop);
 });
-homes.forEach(home=>{
+homes.forEach(home => {
     home.addEventListener("dragover", dragover);
     home.addEventListener("dragleave", dragleave);
     home.addEventListener("dragenter", dragenter);
     home.addEventListener("drop", draghomedrop);
 })
+
 //начало перетаскивания
 function dragstart(e) {
     item = e.target;
@@ -102,30 +131,31 @@ function dragover(e) {
 //попадание на область перетаскивания
 function dragenter(e) {
     e.preventDefault();
-    e.target.classList.add("drag-enter");
-
 }
 
 //уход с области перетаскивания
 function dragleave(e) {
     e.preventDefault();
-    e.target.classList.remove("drag-enter");
 }
 
 //сброс в область вопроса
 function dragdrop(e) {
-    e.currentTarget.classList.remove("drag-enter");
+    // если в области еще ничего нет
     if (e.currentTarget.children.length == 0) {
+        // то добавляем перетаскиваемый объект туда
         e.currentTarget.prepend(item);
+        // увеличиваем счетчик отвеченных вопросов
         currentQuestion++
     }
 
+    // если ответ правильный то увеличиваем счетчик правильных ответом
     if (done(e.currentTarget.firstChild.dataset.target) == e.currentTarget) {
         correctAnswers++
     };
 }
+
+// функция позволяющая скинуть перетаскиваемый объект во все области, если они пустые
 function draghomedrop(e) {
-    e.currentTarget.classList.remove("drag-enter");
     if (e.currentTarget.children.length == 0) {
         e.currentTarget.prepend(item);
     }
@@ -144,7 +174,6 @@ function check() {
         document.querySelector(".tasks").innerHTML = ""
         document.querySelector(".moves").innerHTML = ""
     }
-
 }
 
 const answerButton = document.getElementById("next");

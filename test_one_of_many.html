@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/trenirovka.css" />
+    <link rel="stylesheet" href="css/modal_windows.css" />
     <script defer src="js/test_one_of_many.js"></script>
   </head>
   <body>
@@ -20,13 +21,16 @@
               <h3 id="theme">ТЕМА</h3>
             </div>
             <div class="text">
+              <!-- блок для вопроса -->
               <h3 id="title"></h3>
               <div id="doc">
                 <img id="doc" src="img/doc_fon.svg" alt="" class="icon" />
               </div>
               <div class="btn number_task" id="number_task"></div>
             </div>
+            <!-- блок для ответов -->
             <div class="tasks" id="tasks"></div>
+            <!-- навигация -->
             <div class="moves">
               <button
                 
@@ -51,7 +55,7 @@
         </div>
       </div>
     </div>
-    <!-- модальное окно Информация о контенте -->
+    <!-- модальное окно Последовательность операцийе -->
     <div id="modal_wrapper" class="modal-wrapper">
       <div class="modal_main">
         <div id="close" class="modal__close">&times;</div>

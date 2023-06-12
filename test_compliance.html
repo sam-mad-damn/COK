@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/trenirovka.css" />
+    <link rel="stylesheet" href="css/modal_windows.css">
     <script defer src="js/text_compliance.js"></script>
   </head>
   <body>
@@ -20,13 +21,16 @@
               <h3 id="theme">ТЕМА</h3>
             </div>
             <div class="text">
+              <!-- задание -->
               <h3 id="title">Установите соответствие</h3>
               <div id="doc">
                 <img src="img/doc_fon.svg" alt="" class="icon" />
               </div>
               <div class="btn number_task" id="number_task"></div>
             </div>
+            <!-- блок для вопросов и ответов -->
             <div class="tasks" id="tasks"></div>
+            <!-- навигация -->
             <div class="moves">
               <button
                 disabled
@@ -47,6 +51,27 @@
               </button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- модальное окно Последовательность операций -->
+    <div id="modal_wrapper" class="modal-wrapper">
+      <div class="modal_main">
+        <div id="close" class="modal__close">&times;</div>
+        <div class="modal_body">
+          <h3 class="modal__title">Последовательность операций</h3>
+          <p class="modal_text">
+            1.Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+            Текст Текст Текст Текст Текст Текст Текст
+          </p>
+          <p class="modal_text">
+            2.Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+            Текст Текст Текст Текст Текст Текст Текст
+          </p>
+          <p class="modal_text">
+            3.Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+            Текст Текст Текст Текст Текст Текст Текст
+          </p>
         </div>
       </div>
     </div>

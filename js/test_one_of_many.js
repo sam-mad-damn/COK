@@ -1,26 +1,31 @@
-//работа с модальным окном
+//функция для работы с модальным окном
 function modalWork(btnName, modalName, closeName) {
+    // функция для закрытия модального окна
     function closeModalWindow(wrapper) {
         wrapper.style.display = 'none';
     }
+    // ищем модальное окно на странице
     let modal = document.querySelector(modalName);
 
+    // присваеваем всем указанным кнопкам событие - показ модальное окна
     document.querySelectorAll(btnName).forEach(item => item.addEventListener("click", (e) => {
         modal.style.display = 'block'
     }))
-
+    // присваеваем всем указанным кнопкам событие - скрытие модальное окна
     document.querySelector(closeName).addEventListener('click', () => {
         closeModalWindow(modal);
     })
+    // присваеваем "вуали"(затемнению) модального окна событие - скрытие модального окна
     modal.addEventListener('click', (e) => {
         if (e.target == e.currentTarget)
             closeModalWindow(modal);
     })
+    // скрытие модального окна при нажатии на клавишу Esc
     document.addEventListener('keydown', (e) => {
         if (e.code == 'Escape') closeModalWindow(modal);
     })
 }
-
+// вызываем функцию для работы с модальным окном
 modalWork("#doc", "#modal_wrapper", "#close")
 // Создаем массив объектов с вопросами и вариантами ответов
 const questions = [
@@ -75,6 +80,7 @@ function showNextQuestion() {
         document.getElementById("number_task").textContent = `${currentQuestion + 1}/${questions.length}`
 
         currentQuestion++;
+        console.log(currentQuestion)
     } else {
         // Если вопросы закончились, отображаем результаты
         const percentage = (correctAnswers / questions.length) * 100;
@@ -88,9 +94,9 @@ function showPreviosQuestion(currentQuestion) {
     const questionElement = document.getElementById("title");
     const answersElement = document.getElementById("tasks");
     // console.log(questions[currentQuestion].question);
-    if (currentQuestion >= 0) {
+    if (currentQuestion < questions.length && currentQuestion > 0) {
         // Отображаем текущий вопрос
-        questionElement.textContent = questions[currentQuestion].question;
+        questionElement.textContent = questions[currentQuestion-1].question;
 
         // Создаем HTML-разметку для вариантов ответов
         let answersHTML = "";
@@ -100,14 +106,14 @@ function showPreviosQuestion(currentQuestion) {
             type="radio"
             name="answer"
             id="r${i}"
-            value="${questions[currentQuestion].answers[i]}"><label for="r${i}">${questions[currentQuestion].answers[i]}</label></div>`;
+            value="${questions[currentQuestion-1].answers[i]}"><label for="r${i}">${questions[currentQuestion-1].answers[i]}</label></div>`;
         }
-
+        currentQuestion--;
         // Вставляем HTML-разметку в элемент DOM
         answersElement.innerHTML = answersHTML;
-
+        console.log(currentQuestion)
         // уменьшаем счетчик текущего вопроса
-        document.getElementById("number_task").textContent = `${currentQuestion + 1}/${questions.length}`
+        // document.getElementById("number_task").textContent = `${currentQuestion + 1}/${questions.length}`
     }
 }
 
@@ -138,12 +144,12 @@ function checkAnswer() {
 }
 
 function back() {
-    console.log(currentQuestion)
-    if (currentQuestion > 1) {
-        currentQuestion -= 2
-        console.log(currentQuestion)
-        showPreviosQuestion(currentQuestion)
-    }
+    // console.log(currentQuestion)
+    // if (currentQuestion > 0) {
+    //     currentQuestion -= 2
+    //     console.log(currentQuestion)
+    showPreviosQuestion(currentQuestion)
+    // }
 }
 
 // Назначаем обработчик события для кнопки "Далее"
@@ -151,8 +157,8 @@ const nextButton = document.getElementById("next");
 nextButton.addEventListener("click", checkAnswer);
 
 // Назначаем обработчик события для кнопки "Назад"
-// const previosButton = document.getElementById("previos");
-// previosButton.addEventListener("click", back);
+const previosButton = document.getElementById("previos");
+previosButton.addEventListener("click", back);
 
 // Отображаем первый вопрос
 showNextQuestion();

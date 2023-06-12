@@ -1,26 +1,32 @@
-// //работа с модальным окном
-// function modalWork(btnName, modalName, closeName) {
-//   function closeModalWindow(wrapper) {
-//       wrapper.style.display = 'none';
-//   }
-//   let modal = document.querySelector(modalName);
+//функция для работы с модальным окном
+function modalWork(btnName, modalName, closeName) {
+  // функция для закрытия модального окна
+  function closeModalWindow(wrapper) {
+    wrapper.style.display = 'none';
+  }
+  // ищем модальное окно на странице
+  let modal = document.querySelector(modalName);
 
-//   document.querySelectorAll(btnName).forEach(item => item.addEventListener("click", (e) => {
-//       modal.style.display = 'block'
-//   }))
-//   document.querySelector(closeName).addEventListener('click', () => {
-//       closeModalWindow(modal);
-//   })
-//   modal.addEventListener('click', (e) => {
-//       if (e.target == e.currentTarget)
-//           closeModalWindow(modal);
-//   })
-//   document.addEventListener('keydown', (e) => {
-//       if (e.code == 'Escape') closeModalWindow(modal);
-//   })
-// }
-
-// modalWork("#doc","#recomends","#close_recomends")
+  // присваеваем всем указанным кнопкам событие - показ модальное окна
+  document.querySelectorAll(btnName).forEach(item => item.addEventListener("click", (e) => {
+    modal.style.display = 'block'
+  }))
+  // присваеваем всем указанным кнопкам событие - скрытие модальное окна
+  document.querySelector(closeName).addEventListener('click', () => {
+    closeModalWindow(modal);
+  })
+  // присваеваем "вуали"(затемнению) модального окна событие - скрытие модального окна
+  modal.addEventListener('click', (e) => {
+    if (e.target == e.currentTarget)
+      closeModalWindow(modal);
+  })
+  // скрытие модального окна при нажатии на клавишу Esc
+  document.addEventListener('keydown', (e) => {
+    if (e.code == 'Escape') closeModalWindow(modal);
+  })
+}
+// вызываем функцию для работы с модальным окном
+modalWork("#doc", "#modal_wrapper", "#close")
 
 // Создаем массив объектов с вопросами и вариантами ответов
 const questions = [
