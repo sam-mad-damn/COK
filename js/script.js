@@ -30,4 +30,6 @@ function modalWork(btnName, modalName, closeName) {
 modalWork("#head_info","#modal_wrapper","#close")
 modalWork("#head_word","#words","#close_words")
 modalWork("#doc","#recomends","#close_recomends")
+modalWork("#doc_2","#recomends_2","#close_recomends_2")
+modalWork("#doc_3","#recomends_3","#close_recomends_3")
 

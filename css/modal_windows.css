@@ -1,7 +1,7 @@
 /*  #region ModaWindows */
 .modal-wrapper,
 #words,
-#recomends {
+#recomends,#recomends_2,#recomends_3{
   position: fixed;
   top: 0;
   left: 0;

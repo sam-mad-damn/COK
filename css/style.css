@@ -69,7 +69,7 @@ body {
   padding-left: 5%;
 }
 .title > h3 {
-  font-size: 4vh;
+  font-size: 3.5vh;
   margin: 15px;
 }
 #theme {
@@ -239,7 +239,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-#doc {
+#doc,#doc_2,#doc_3 {
   width: 7vh;
   height: 7vh;
 }

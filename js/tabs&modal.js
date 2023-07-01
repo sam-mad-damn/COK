@@ -43,9 +43,16 @@ function tabsBthWork(btnTag) {
                     tab.classList.add("active")
                 }
             })
+            // переносим скролл всех вкладок на верх страницы
+            window.scrollTo(0, 0)
+            document.querySelectorAll(".main").forEach(item => {
+                item.scrollTo(0, 0)
+            })
         })
     })
 }
-// вызываем функцию для кнопок "далее" и "назад"
+// вызываем функцию для переключения вкладок для кнопок "далее" и "назад"
 tabsBthWork("next");
 tabsBthWork("previos");
+tabsBthWork("icon_navigation");
+
