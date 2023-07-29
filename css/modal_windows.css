@@ -1,7 +1,9 @@
 /*  #region ModaWindows */
 .modal-wrapper,
 #words,
-#recomends,#recomends_2,#recomends_3{
+#recomends,
+#recomends_2,
+#recomends_3 {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +24,7 @@
   background-color: #fefefe;
   display: block;
   margin: auto;
-  overflow: scroll;
+  overflow: auto;
   /* border: 5px solid var(--main-color); */
   border-radius: 15px;
   font-family: "text";

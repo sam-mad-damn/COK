@@ -4,15 +4,15 @@
     flex-direction: column;
   }
   .head_item {
-    font-size: 22px;
+    font-size: 20px;
   }
   .head {
     margin-left: 6%;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 3%;
   }
   .title > h3 {
-    font-size: 40px;
+    font-size: 22px;
   }
   /* #endregion */
   /*  #region Main */
@@ -25,10 +25,10 @@
     padding: 0px;
   }
   .logo_noline {
-    font-size: 25px;
+    font-size: 22px;
   }
   .logo_line {
-    font-size: 35px;
+    font-size: 25px;
   }
   .items {
     padding-left: 0%;
@@ -43,17 +43,17 @@
     font-size: 20px;
   }
   .righ {
-    height: 80%;
+    height: 85%;
   }
   .text > h4 {
     margin-bottom: 0px;
-    font-size: 20px;
+    font-size: 14px;
   }
   .icons {
     justify-content: space-between;
     top: auto;
   }
-  #doc {
+  .icon {
     width: 55px;
     height: 55px;
   }

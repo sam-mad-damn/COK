@@ -1,21 +1,24 @@
 :root {
-    --main-bg-color: #b9b9b9;
-    --head-line-color: #515151;
-    --main-color: #f75a21;
-    --first-item: #fd642c;
-    --second-item: #c64f23;
-    --third-item: #ae3f17;
-  }
-  @font-face {
-    font-family: "text";
-    font-display: swap;
-    src: url(OpenSans-Medium.woff);
-  }
-  @font-face {
-    font-family: "title";
-    font-display: swap;
-    src: url(OpenSans-Bold.woff);
-  }
+  --main-bg-color: #b9b9b9;
+  --main-font-color: #272727;
+  --head-line-color: #515151;
+  --main-color: #f75a21;
+  --first-item: #ff7322;
+  --second-item: #f0581c;
+  --third-item: #ac3d36;
+  --btn-color: #ac3d36;
+}
+@font-face {
+  font-family: "text";
+  font-display: swap;
+  src: url(Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: "title";
+  font-display: swap;
+  src: url(Montserrat-Bold.ttf);
+}
+
   body {
     background-color: var(--main-bg-color);
     margin: 0px;

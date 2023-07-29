@@ -3,20 +3,22 @@
   --main-font-color: #272727;
   --head-line-color: #515151;
   --main-color: #f75a21;
-  --first-item: #fd642c;
-  --second-item: #c64f23;
-  --third-item: #ae3f17;
+  --first-item: #ff7322;
+  --second-item: #f0581c;
+  --third-item: #ac3d36;
+  --btn-color: #ac3d36;
 }
 @font-face {
   font-family: "text";
   font-display: swap;
-  src: url(OpenSans-Medium.woff);
+  src: url(Montserrat-Regular.ttf);
 }
 @font-face {
   font-family: "title";
   font-display: swap;
-  src: url(OpenSans-Bold.woff);
+  src: url(Montserrat-Bold.ttf);
 }
+
 body {
   background-color: var(--main-bg-color);
   margin: 0px;
@@ -48,7 +50,7 @@ body {
   padding: 8px;
   width: 50%;
   /* max-width: 180px; */
-  font-size: 2.5vh;
+  font-size: 2.7vh;
   transition: 0.3s;
 }
 .head,
@@ -108,11 +110,11 @@ body {
   background-color: var(--third-item);
 }
 
-
 .line_item {
   /* border: 0.4vh solid var(--main-color); */
   width: 100%;
   min-height: 150px;
+  height: 100%;
   background-color: #fff;
   display: -webkit-flex;
   display: flex;
@@ -170,7 +172,7 @@ body {
 }
 .title_item {
   color: #fff;
-  font-size: 2.5vh;
+  font-size: 2.7vh;
   font-family: "text";
   word-wrap: break-word;
 }
@@ -239,7 +241,9 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-#doc,#doc_2,#doc_3 {
+#doc,
+#doc_2,
+#doc_3 {
   width: 7vh;
   height: 7vh;
 }
@@ -256,7 +260,8 @@ body {
   padding-left: 10%;
   color: var(--head-line-color);
 }
-.logo_line, .logo_noline{
+.logo_line,
+.logo_noline {
   font-family: "title";
   margin: 10px;
   display: flex;
@@ -273,6 +278,28 @@ body {
   width: max-content;
 }
 /* #endregion */
-/* #region Адаптив */
-
+/* #region таблица Ключевые слова */
+table.iksweb {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  height: auto;
+  margin-top: 10px;
+}
+table.iksweb,
+table.iksweb td,
+table.iksweb th {
+  border: 1px solid #595959;
+}
+table.iksweb td,
+table.iksweb th {
+  padding: 3px;
+  width: 30px;
+  height: 35px;
+}
+table.iksweb th {
+  background: #347c99;
+  color: #fff;
+  font-weight: normal;
+}
 /* #endregion */

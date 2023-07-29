@@ -54,5 +54,26 @@ function tabsBthWork(btnTag) {
 // вызываем функцию для переключения вкладок для кнопок "далее" и "назад"
 tabsBthWork("next");
 tabsBthWork("previos");
-tabsBthWork("icon_navigation");
+tabsBthWork("mask");
+
+// наведение на иконки инфографики
+document.querySelectorAll(".mask").forEach(button => {
+    // при наведении на иконку
+    button.addEventListener("mouseover", (e) => {
+        //переключить спрятанную картинку
+        document.querySelector(".hover_img").classList.toggle("hide")
+        // выключить основную картинку
+        document.querySelector(".main_bg").classList.toggle("hide")
+        // показать нужную картинку
+        document.querySelector(".hover_img").src = e.target.dataset.hover
+    })
+    // при уведении курсора
+    button.addEventListener("mouseout", (e) => {
+        //переключить спрятанную картинку
+        document.querySelector(".hover_img").classList.toggle("hide")
+        // выключить основную картинку
+        document.querySelector(".main_bg").classList.toggle("hide")
+
+    })
+})
 
