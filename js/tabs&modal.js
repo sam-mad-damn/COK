@@ -28,6 +28,10 @@ function modalWork(btnName, modalName, closeName) {
 // вызываем функцию для работы с модальным окном
 modalWork("#doc", "#modal_wrapper", "#close")
 
+modalWork(".mask[data-target='slaid-1']","#slaid1","#close_slaid1")
+modalWork(".mask[data-target='slaid-2']","#slaid2","#close_slaid2")
+modalWork(".mask[data-target='slaid-3']","#slaid3","#close_slaid3")
+
 // работа с кнопками вкладок
 function tabsBthWork(btnTag) {
     document.querySelectorAll("." + btnTag).forEach(button => {
@@ -53,8 +57,8 @@ function tabsBthWork(btnTag) {
 }
 // вызываем функцию для переключения вкладок для кнопок "далее" и "назад"
 tabsBthWork("next");
-tabsBthWork("previos");
-tabsBthWork("mask");
+// tabsBthWork("previos");
+// tabsBthWork("mask");
 
 // наведение на иконки инфографики
 document.querySelectorAll(".mask").forEach(button => {
@@ -62,8 +66,7 @@ document.querySelectorAll(".mask").forEach(button => {
     button.addEventListener("mouseover", (e) => {
         //переключить спрятанную картинку
         document.querySelector(".hover_img").classList.toggle("hide")
-        // выключить основную картинку
-        document.querySelector(".main_bg").classList.toggle("hide")
+        
         // показать нужную картинку
         document.querySelector(".hover_img").src = e.target.dataset.hover
     })
@@ -71,8 +74,6 @@ document.querySelectorAll(".mask").forEach(button => {
     button.addEventListener("mouseout", (e) => {
         //переключить спрятанную картинку
         document.querySelector(".hover_img").classList.toggle("hide")
-        // выключить основную картинку
-        document.querySelector(".main_bg").classList.toggle("hide")
 
     })
 })

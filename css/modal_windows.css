@@ -3,7 +3,7 @@
 #words,
 #recomends,
 #recomends_2,
-#recomends_3 {
+#recomends_3{
   position: fixed;
   top: 0;
   left: 0;
@@ -17,45 +17,62 @@
 
 .modal_main {
   position: relative;
-  top: 50px;
-  max-width: 1092px;
-  height: 490px;
+  top: 30px;
+  max-width: 80%;
+  height: 80%;
   padding: 30px;
   background-color: #fefefe;
   display: block;
   margin: auto;
   overflow: auto;
-  /* border: 5px solid var(--main-color); */
+  border: 4px solid var(--main-color);
   border-radius: 15px;
   font-family: "text";
+}
+.slaid{
+   overflow: hidden;
+  /*padding: 10px; */
+  
 }
 
 /* Редактор прокрутки модального окна */
 .modal_main::-webkit-scrollbar {
   width: 10px;
-  margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 90px;
 }
 .modal_main::-webkit-scrollbar-thumb {
-  margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 90px;
   background-color: var(--head-line-color);
 }
 .modal_main::-webkit-scrollbar-track {
-  margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 90px;
   background-color: #d5d5d5;
 }
 .modal__close {
-  display: flex;
-  position: absolute;
-  top: 0px;
-  right: 15px;
+  /* display: flex;
+  position: fixed;
+  top: 45px;
+  right: 115px;
   cursor: pointer;
   font-size: 8vh;
   color: var(--main-color);
   height: 30px;
+  width: 30px; */
+  background-color: var(--main-color);
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  position: fixed;
+  top: 10px;
+  right: 7.2%;
+
+  cursor: pointer;
   width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: white;
   /* border-radius: 50%; */
 }
 
